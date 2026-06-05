@@ -1,0 +1,30 @@
+Prompt pronto para copiar e colar (no Grok, ChatGPT, Google, fóruns etc.):
+
+---
+Sou especialista configurando cliente para L2J Mobius Classic 2.9.5 Saviors (protocolo Saviors / ~2.9.5).
+
+Preciso urgentemente de um **System Patch limpo / clean system / decrypted system** para cliente Classic 2.9 ou 2.9.5 Saviors que funcione bem com L2J Mobius (sem GameGuard, sem proteções pesadas, .dat descriptografados).
+
+Cliente base que estou usando: Ashenvale Classic 2.9 (ou qualquer cliente Classic Saviors 2.9.5).
+
+O que procuro:
+- System folder completo com arquivos .dat descriptografados
+- Compatível com protocolo 2.9.5 Saviors
+- Ideal para private server L2J / Mobius
+- Preferencialmente de 2025 ou 2026, ou de servidores Classic 2.9.5 conhecidos
+
+Evite:
+- Systems com GameGuard ativo
+- Packs cheios de proteção ou anti-cheat custom
+- Links mortos ou suspeitos
+
+Por favor liste:
+1. Melhores links diretos ou torrents atuais
+2. Qual cliente base usar (recomendações de torrent ou download limpo)
+3. Se possível, mencione se o system já vem com l2.ini editável ou editor incluso
+4. Avisos de segurança ou o que verificar antes de usar
+
+Foque em fontes da comunidade como MaxCheaters, RageZone, lineage2.org.uk ou servers Classic 2.9.5.
+---
+
+Dica: Depois de encontrar, sempre escaneie com VirusTotal e teste em máquina virtual se possível.
