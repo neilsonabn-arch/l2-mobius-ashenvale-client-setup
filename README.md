@@ -1,92 +1,94 @@
-**Guia Limpo e Prático: Configurar Cliente Ashenvale Classic 2.9 no L2J Mobius Classic 2.9.5 Saviors**
+**✅ Guia Focado: Resolver navl.dll (0xc000007b) + Configurar Ashenvale Classic 2.9 no L2J Mobius Classic 2.9.5 Saviors**
 
-Servidor: IP `82.153.205.6` | Porta Game 7777 (Login geralmente 2106)
+**Servidor:** IP `82.153.205.6` | Porta 7777 (Login ~2106)
 
-Este repositório contém o guia passo a passo + arquivos prontos para uma configuração limpa e estável.
+Este repositório tem o guia prático + arquivos prontos. O foco principal agora é matar o erro de DLL 0xc000007b causado por falta de VC++ 32-bit, system protegido do Ashenvale e incompatibilidades no Windows 10/11.
 
-## Ordem Ideal de Execução (Siga exatamente nesta sequência)
+## Ordem Recomendada (Faça exatamente assim)
 
-1. **Criar pasta limpa + extrair cliente**
-   - Feche todo o cliente e launcher.
-   - Crie uma pasta nova, ex: `E:\L2_Mobius_295_Clean`
-   - Extraia o cliente Ashenvale Classic 2.9 completo lá (baixe novamente de https://ashenvale.club se possível).
+### Passo 1: Visual C++ Redistributable (Obrigatório - resolve a maioria dos 0xc000007b)
 
-2. **Deletar pasta system (radical)**
-   - Delete completamente:
-     - `system`
-     - `GameGuard` (se existir)
-     - `Guard` (se existir)
-     - `__MACOSX`
-     - Pastas de cache/temp
-   - Isso resolve o erro "Files are corrupted !!! Please, full check" na maioria dos casos.
+Baixe e instale **os dois**:
 
-3. **Instalar Redistribuíveis Visual C++ (resolve 0xc000007b + navl.dll)**
-   - Baixe e instale **ambos** (x86 é essencial porque o cliente é 32-bit):
-     - [Visual C++ Redistributable 2015-2022 x86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
-     - [Visual C++ Redistributable 2015-2022 x64](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-   - (Opcional mas recomendado) Instale também 2013 x86 e 2010 x86.
-   - **Reinicie o computador** após instalar.
+- [Visual C++ Redistributable 2015-2022 (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe) ← **Mais importante** (cliente L2 é 32-bit)
+- [Visual C++ Redistributable 2015-2022 (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 
-4. **Aplicar System Patch Limpo para 2.9.5 Saviors**
-   - Após deletar o system, baixe um "clean system" / "decrypted system" para Classic 2.9.5 Saviors / L2J Mobius.
-   - Fontes recomendadas (comunidade):
-     - Cliente base + system do próprio Ashenvale (melhor compatibilidade com a versão).
-     - Fóruns: MaxCheaters, RageZone – busque "Classic 2.9.5 clean system", "Saviors decrypted system L2J" ou "Mobius 2.9.5 system patch".
-     - Archive de clients: https://www.lineage2.org.uk/
-   - Extraia e cole a pasta `system` dentro da raiz do cliente.
-   - Prefira systems marcados como "clean", "decrypted" ou "for private servers / L2J".
+**Reinicie o computador** depois.
 
-5. **Configurar l2.ini (use o arquivo deste repo)**
-   - Copie o arquivo `l2.ini` deste repositório para dentro da pasta `system` do seu cliente (substituindo o existente).
-   - Se o l2.ini do seu system estiver criptografado (aparece como texto estranho no Notepad), você precisa usar uma ferramenta de edição:
-     - L2FileEdit versão para Classic / Saviors
-     - Ou o editor que veio junto com o system patch (muitos incluem LA2_ini_edit.exe ou similar).
-   - O IP já está configurado para `82.153.205.6`.
+### Passo 2: Limpeza Radical do System
 
-6. **Configurações de Estabilidade no Windows**
-   - Botão direito no `l2.exe` (ou launcher principal) → Propriedades → aba **Compatibilidade**:
-     - Marque "Executar este programa como administrador"
-     - Modo de compatibilidade: **Windows 7** ou **Windows 8**
-     - Marque "Desativar otimizações de tela cheia"
-   - Adicione exclusão no Windows Defender / Antivirus para a **pasta inteira** do cliente.
-   - Rode sempre como Administrador.
+1. Feche completamente o cliente e qualquer launcher.
+2. Vá até sua pasta do cliente (ex: `E:\Ashenvale_Classic_2.9` ou pasta limpa nova).
+3. Delete **completamente**:
+   - `system`
+   - `GameGuard`
+   - `Guard`
+   - `__MACOSX`
+   - Qualquer cache/temp
 
-7. **Testar**
-   - Rode o `l2.exe` diretamente como Administrador.
-   - Evite o "Full Check" do launcher oficial (ele costuma corromper o system para private servers).
-   - Observe os logs do seu servidor Mobius (LoginServer e GameServer) para confirmar conexão.
+**Dica forte:** Crie uma pasta nova limpa (ex: `E:\L2_Mobius_295_Clean`) e extraia o cliente novamente.
 
-## l2.ini Otimizado (fornecido neste repo)
+### Passo 3: System Patch Limpo para 2.9.5 Saviors
 
-O arquivo `l2.ini` na raiz deste repositório está pronto. Copie para `sua-pasta-do-cliente\system\l2.ini`.
+- Baixe um **"clean system" / "decrypted system"** para Classic 2.9.5 Saviors / L2J Mobius.
+- Procure por: "clean system 2.9.5 Mobius", "decrypted system Saviors", "Classic 2.9.5 system patch L2J".
+- Fontes comuns: MaxCheaters, RageZone, lineage2.org.uk, ou o cliente oficial do Ashenvale (https://ashenvale.club).
+- Extraia e cole a pasta `system` na raiz do cliente.
 
-Estrutura típica usada:
-- ServerAddr apontando para seu IP público.
-- Port 7777 para o Game Server.
-- Configuração mínima e compatível com a maioria dos systems Classic 2.9.5.
+Use o arquivo `PROMPT-system-patch-search.txt` deste repo para buscas mais eficientes.
 
-Se o seu system patch já tiver outras seções ([Auth], etc.), mantenha-as e apenas altere os endereços para `82.153.205.6`.
+### Passo 4: l2.ini (use o deste repo)
 
-## Erros Comuns e Fixes Rápidos
+1. Baixe o `l2.ini` deste repositório.
+2. Cole dentro da pasta `system`, substituindo o existente.
+3. Se o arquivo parecer criptografado (texto estranho), use L2FileEdit (versão Classic/Saviors) ou o editor que veio com o patch.
+4. (Opcional) Marque como "Somente leitura" nas propriedades.
 
-- **Files are corrupted !!! Please, full check** → Delete system + aplique system limpo decrypted. Não use updater oficial.
-- **0xc000007b + navl.dll** → VC++ x86 + x64 + compatibilidade Windows 7/8 + rodar como admin + exclusão no Defender. Use ferramenta Dependencies (github lucasg/Dependencies) no exe para diagnosticar DLLs faltando.
-- Dificuldade para logar → Verifique l2.ini, crie a conta no servidor, confirme que LoginServer está rodando na porta 2106 e GameServer na 7777. Verifique ipconfig.xml no servidor com seu IP externo.
-- navl.dll erro de arquitetura → Cliente é 32-bit. VC++ x86 é obrigatório.
+O IP já está definido para `82.153.205.6`.
 
-## Dicas Extras
+### Passo 5: Compatibilidade e Segurança
 
-- Mantenha o caminho curto e sem espaços especiais (ex: E:\L2Client).
-- Firewall do servidor: abra portas 2106 (login) e 7777 (game).
-- No servidor Mobius: configure ipconfig.xml ou ExternalHostname com `82.153.205.6`.
-- Teste primeiro localmente (127.0.0.1) se possível antes de expor publicamente.
-- Comunidade: l2jmobius.org/forum e Discord oficial do Mobius.
+No `l2.exe` (ou launcher principal):
+- Botão direito → Propriedades → aba **Compatibilidade**:
+  - [x] Executar este programa como administrador
+  - Modo de compatibilidade: **Windows 7** ou **Windows 8**
+  - [x] Desativar otimizações de tela cheia
 
-## Arquivos neste repositório
+Adicione exclusão completa no Windows Defender para a pasta do cliente.
 
-- `README.md` – Este guia
-- `l2.ini` – Arquivo de configuração pronto para copiar
+### Passo 6: Teste
 
-Baixe o ZIP do repositório ou clone para ter os arquivos sempre atualizados.
+- Rode `l2.exe` **direto como Administrador** (evite launcher oficial se possível).
+- Não use "Full Check" do updater oficial.
 
-Boa sorte e divirta-se no servidor! Se tiver erro específico após seguir o guia, cole a mensagem exata + logs do servidor.
+## Checklist Rápido (Arquivo dedicado)
+
+Veja o arquivo `CHECKLIST-navl-dll-fix.md` neste repositório para uma versão marcável e curta, focada no erro de DLL.
+
+## Arquivos neste Repositório
+
+- `README.md` — Este guia
+- `CHECKLIST-navl-dll-fix.md` — Checklist curto e prático para o erro navl.dll
+- `PROMPT-system-patch-search.txt` — Prompt pronto e otimizado para encontrar system patch limpo
+- `l2.ini` — Configuração com IP 82.153.205.6 + notas para Ashenvale
+
+Baixe o ZIP ou os arquivos individuais.
+
+## Se o erro persistir após VC++ + Limpeza
+
+1. Use a ferramenta **Dependencies** (https://github.com/lucasg/Dependencies) no `l2.exe` para ver exatamente qual DLL está faltando.
+2. Tente outro system patch limpo.
+3. Teste em compatibilidade Windows 8.1 também.
+4. Desative antivirus temporariamente.
+5. Verifique se o system é realmente decrypted e compatível com 2.9.5.
+
+## Próximos Passos no Chat
+
+Depois de instalar os VC++ (Passo 1) e reiniciar, me diga:
+- O 0xc000007b / navl.dll ainda aparece?
+- Apareceu outro erro?
+- O cliente abre?
+
+Posso ajudar com ajustes específicos no l2.ini para o Ashenvale ou refinar buscas.
+
+Boa sorte! Siga o checklist e reporte o resultado.
